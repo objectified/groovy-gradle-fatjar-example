@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'groovy'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy-all:2.4.5'
+  compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.10.Final'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'HelloFatjar'
+    }
+}
